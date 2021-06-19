@@ -1,5 +1,4 @@
 from pexels_api import API
-from ReadBroll import ReadBroll
 
 
 class Images():
