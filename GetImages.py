@@ -5,7 +5,7 @@ class Images():
     PEXELS_API_KEY = '563492ad6f917000010000015f3eaa7edfa64de1ae3ee3bca5508fa9'
     api = API(PEXELS_API_KEY)
 
-    def __init__(self, image, length=10):
+    def __init__(self, image, length):
         self.image = image
         self.length = length
 
