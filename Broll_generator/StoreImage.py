@@ -1,7 +1,8 @@
-from ReadBroll import ReadBroll
-from GetImages import Images
+from Broll_generator.ReadBroll import ReadBroll
+from Broll_generator.GetImages import Images
 import os
 import requests
+
 
 class StoreB_roll():
     def __init__(self, path, no_of_images):
@@ -10,7 +11,7 @@ class StoreB_roll():
 
     def store_images(self):
         self.keyWords = ReadBroll(self.path).getKeywords()
-        
+
         if len(self.keyWords) > 0:
 
             for self.items in self.keyWords:
@@ -31,6 +32,7 @@ class StoreB_roll():
 
             i = 1
             print('Initiating downloads')
+            print(f'Totally {self.no_of_images * len(self.keyWords)} images will be downloaded')
             for self.index, self.urls_chunks in enumerate(self.keyWords_images_urls_chunks):
                 for self.urls in self.urls_chunks:
                     if i <= self.no_of_images * len(self.keyWords):
@@ -43,5 +45,7 @@ class StoreB_roll():
                         print('All images downloaded')
                         self.f.close()
                         break
+            print('Done..')
         else:
-            print("No keywords found!, To get a keyword please surround the keyword with '!' (eg: !green!)")
+            print(
+                "No keywords found!, To get a keyword please surround the keyword with '!' (eg: !green!)")
