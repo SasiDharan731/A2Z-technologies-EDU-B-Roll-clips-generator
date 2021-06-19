@@ -14,5 +14,5 @@ class Images():
         self.photos = self.api.get_entries()
         self.photo_urls = []
         for self.photo in self.photos:
-            self.photo_urls.append(self.photo.url)
+            self.photo_urls.append(self.photo.original)
         return self.photo_urls
