@@ -6,6 +6,7 @@ def main():
     args = sys.argv[1:]
     text_file = args[0]
     number_of_images = args[1]
+    
     if type(number_of_images) == str:
         try:
             int(number_of_images)
